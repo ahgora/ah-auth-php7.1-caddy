@@ -35,4 +35,4 @@ if [ -f composer.json ]; then
 if [ ! -f composer.lock ]; then
     echo -e "\nConsider adding a 'composer.lock' file into your source repository.\n"
   fi
-fi  
+fi

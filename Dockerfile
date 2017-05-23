@@ -11,13 +11,13 @@ MAINTAINER Weslley Camilo
 USER root
 
 # Copy Caddyfile and entry script
-COPY Caddyfile /home/ambientum/Caddyfile
-COPY start.sh  /home/ambientum/start.sh
+COPY Caddyfile /home/Caddyfile
+COPY start.sh  /home/start.sh
 
 # Installs Caddy
 RUN curl https://getcaddy.com | bash && \
-    chmod +x /home/ambientum/start.sh && \
-    chown -R ambientum:ambientum /home/ambientum
+    chmod +x /home/start.sh && \
+    chown -R 1001:1001 /home
 
 # Installs Confd
 RUN wget https://github.com/kelseyhightower/confd/releases/download/v0.12.0-alpha3/confd-0.12.0-alpha3-linux-amd64 -O /usr/local/bin/confd && \
@@ -31,7 +31,7 @@ LABEL \
 COPY ./s2i/bin/ /usr/libexec/s2i
 
 # Define the running user
-USER ambientum
+USER 1001
 
 # Application directory
 WORKDIR "/var/www/app"
@@ -40,4 +40,4 @@ WORKDIR "/var/www/app"
 EXPOSE 8080
 
 # Starts a single shell script that puts php-fpm as a daemon and caddy on foreground
-CMD ["/home/ambientum/start.sh"]
+CMD ["/home/start.sh"]
