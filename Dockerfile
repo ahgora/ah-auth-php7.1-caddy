@@ -8,19 +8,20 @@ FROM ambientum/php:7.1
 MAINTAINER Weslley Camilo
 
 # Reset user to root to allow software install
-USER root
+#USER root
 
 
-RUN adduser -D -u 1001 ahgora
+
 
 # Copy Caddyfile and entry script
-COPY Caddyfile /home/ahgora/Caddyfile
-COPY start.sh  /home/ahgora/start.sh
+
+#COPY Caddyfile /home/ahgora/Caddyfile
+#COPY start.sh  /home/ahgora/start.sh
 
 # Installs Caddy
-RUN curl https://getcaddy.com | bash && \
-    chmod +x /home/ahgora/start.sh && \
-    chown -R 1001:1001 /home/ahgora
+#RUN curl https://getcaddy.com | bash && \
+#    chmod +x /home/ahgora/start.sh && \
+#    chown -R 1001:1001 /home/ahgora
 
 # Installs Confd
 RUN wget https://github.com/kelseyhightower/confd/releases/download/v0.12.0-alpha3/confd-0.12.0-alpha3-linux-amd64 -O /usr/local/bin/confd && \
@@ -34,7 +35,7 @@ LABEL \
 COPY ./s2i/bin/ /usr/libexec/s2i
 
 # Define the running user
-USER 1001
+#USER 1001
 
 # Application directory
 WORKDIR "/var/www/app"
@@ -43,4 +44,5 @@ WORKDIR "/var/www/app"
 EXPOSE 8080
 
 # Starts a single shell script that puts php-fpm as a daemon and caddy on foreground
-CMD ["/home/ahgora/start.sh"]
+
+#CMD ["/home/ahgora/start.sh"]
