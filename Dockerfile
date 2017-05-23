@@ -9,6 +9,10 @@ MAINTAINER Weslley Camilo
 
 # Reset user to root to allow software install
 #USER root
+
+RUN adduser -D -u 1001 default && \
+  chown -R default:default /var/www
+
 USER 1001
 
 
