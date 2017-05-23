@@ -9,7 +9,7 @@ MAINTAINER Weslley Camilo
 
 # Reset user to root to allow software install
 #USER root
-
+USER 1001
 
 
 
