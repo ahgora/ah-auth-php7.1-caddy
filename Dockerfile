@@ -24,9 +24,9 @@ MAINTAINER Weslley Camilo
 #    chown -R 1001:1001 /home/ahgora
 
 # Installs Confd
-RUN wget https://github.com/kelseyhightower/confd/releases/download/v0.12.0-alpha3/confd-0.12.0-alpha3-linux-amd64 -O /usr/local/bin/confd && \
-    chmod +x /usr/local/bin/confd && \
-    mkdir -p /etc/confd/conf.d /etc/confd/templates
+##RUN wget https://github.com/kelseyhightower/confd/releases/download/v0.12.0-alpha3/confd-0.12.0-alpha3-linux-amd64 -O /usr/local/bin/confd && \
+##    chmod +x /usr/local/bin/confd && \
+##    mkdir -p /etc/confd/conf.d /etc/confd/templates
 
 LABEL \
       io.openshift.s2i.scripts-url=image:///usr/libexec/s2i \
