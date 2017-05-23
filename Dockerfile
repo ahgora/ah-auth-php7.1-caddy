@@ -2,14 +2,14 @@
 # Ambientum 1.0
 # PHP 7.0 bundled with the Awesome Caddy webserver
 ######
-FROM ambientum/php:7.1
+FROM weslleycamilo/ah-auth-php-7.1
 
 # Repository/Image Maintainer
 MAINTAINER Weslley Camilo
 
 # Reset user to root to allow software install
 #USER root
-USER 1001
+#USER 1001
 
 
 
