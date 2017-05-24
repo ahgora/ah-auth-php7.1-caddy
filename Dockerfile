@@ -23,6 +23,5 @@ WORKDIR "/var/www/app"
 # Expose webserver port
 EXPOSE 8080
 
-# Starts a single shell script that puts php-fpm as a daemon and caddy on foreground
 
 #CMD ["/home/ahgora/start.sh"]
