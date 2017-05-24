@@ -7,21 +7,15 @@ FROM ahgora/alpine-php71-build
 # Repository/Image Maintainer
 MAINTAINER Weslley Camilo
 
-# Reset user to root to allow software install
-#USER root
-
 # Copy Caddyfile and entry script
 COPY Caddyfile /home/default/Caddyfile
 
-
+#Define Labels for the openshift.
 LABEL \
       io.openshift.s2i.scripts-url=image:///usr/libexec/s2i \
       io.s2i.scripts-url=image:///usr/libexec/s2i
 
 COPY ./s2i/bin/ /usr/libexec/s2i
-
-# Define the running user
-#USER 1001
 
 # Application directory
 WORKDIR "/var/www/app"
