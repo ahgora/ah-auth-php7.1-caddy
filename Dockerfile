@@ -20,6 +20,9 @@ COPY ./s2i/bin/ /usr/libexec/s2i
 # Application directory
 WORKDIR "/var/www/app"
 
+RUN chgrp -R 0 /var/www/app \
+  && chmod -R g+rwX /var/www/app
+
 # Expose webserver port
 EXPOSE 8080
 
