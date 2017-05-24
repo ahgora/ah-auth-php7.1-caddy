@@ -2,7 +2,7 @@
 # Ambientum 1.0
 # PHP 7.0 bundled with the Awesome Caddy webserver
 ######
-FROM weslleycamilo/ah-auth-php-7.1
+FROM ahgora/alpine-php71-build
 
 # Repository/Image Maintainer
 MAINTAINER Weslley Camilo
