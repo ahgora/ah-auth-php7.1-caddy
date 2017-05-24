@@ -6,6 +6,11 @@
 # For more information see the documentation:
 #	https://github.com/openshift/source-to-image/blob/master/docs/builder_image.md
 #
+export USER_ID=$(id -u)
+export GROUP_ID=$(id -g)
+echo "================================ run =============================="
+echo "USER=$USER_ID"
+echo "GROUP=$GROUP_ID"
 
 /usr/local/bin/confd -confdir /var/www/app/devops/confd -watch -node http://${etcdAddr-etcd}:${etcdPort} &
 
