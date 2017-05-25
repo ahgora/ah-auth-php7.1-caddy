@@ -8,5 +8,6 @@ Sample invocation:
 s2i build <source code path/URL> ah-auth <application image>
 
 You can then run the resulting image via:
-docker run <application image>
+
+docker run -itd --rm -p 8080:8080<application image>
 EOF
