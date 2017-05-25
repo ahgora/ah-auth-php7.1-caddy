@@ -12,10 +12,10 @@ echo "================================ run =============================="
 echo "USER=$USER_ID"
 echo "GROUP=$GROUP_ID"
 
-/usr/local/bin/confd -confdir /var/www/app/devops/confd -watch -node http://${etcdAddr-etcd}:${etcdPort-4001} &
-
 # Starts FPM
 nohup /usr/sbin/php-fpm7 -y /etc/php7/php-fpm.conf -F -O 2>&1 &
 
 # Starts caddy with the default configuration file
-/usr/local/bin/caddy -conf /home/default/Caddyfile
+/usr/local/bin/caddy -conf /home/default/Caddyfile &
+
+/usr/local/bin/confd -confdir /var/www/app/devops/confd -watch -node http://${etcdAddr-etcd}:${etcdPort-4001}
