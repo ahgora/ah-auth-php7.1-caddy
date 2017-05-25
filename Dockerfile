@@ -1,5 +1,4 @@
 #####
-# Ambientum 1.0
 # PHP 7.0 bundled with the Awesome Caddy webserver
 ######
 FROM ahgora/alpine-php71-build
