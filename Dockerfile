@@ -19,5 +19,6 @@ COPY ./s2i/bin/ /usr/libexec/s2i
 # Application directory
 WORKDIR "/var/www/app"
 
+
 # Expose webserver port
 EXPOSE 8080
