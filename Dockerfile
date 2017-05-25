@@ -22,6 +22,3 @@ WORKDIR "/var/www/app"
 
 # Expose webserver port
 EXPOSE 8080
-
-
-#CMD ["/home/ahgora/start.sh"]
