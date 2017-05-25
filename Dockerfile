@@ -7,7 +7,7 @@ FROM ahgora/alpine-php71-build
 MAINTAINER Weslley Camilo
 
 # Copy Caddyfile and entry script
-COPY Caddyfile /home/default/Caddyfile
+COPY Caddyfile /var/www/Caddyfile
 
 #Define Labels for the openshift.
 LABEL \
