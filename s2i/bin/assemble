@@ -31,13 +31,6 @@ fi
 echo "---> Installing application source..."
 cp -Rf /tmp/src/. /var/www/app
 
-#test
-chgrp -R 0 /var/www
-chmod -R gu+rwX /var/www
-
-chown $USER:$GROUP -R /var/www
-#test
-
 echo "---> Building application from source..."
 # TODO: Add build steps for your application, eg npm install, bundle install, pip install, etc.
 
