@@ -31,8 +31,8 @@ fi
 echo "---> Installing application source..."
 cp -Rf /tmp/src/. /var/www/app
 
-echo "---> Changing folders permission.."
-chmod -R gu+rwX /var/www
+#echo "---> Changing folders permission.."
+#chmod -R gu+rwX /var/www
 
 echo "---> Building application from source..."
 # TODO: Add build steps for your application, eg npm install, bundle install, pip install, etc.
