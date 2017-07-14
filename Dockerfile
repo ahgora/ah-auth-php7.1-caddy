@@ -1,10 +1,7 @@
-#####
-# PHP 7.0 bundled with the Awesome Caddy webserver
-######
 FROM ahgora/alpine-php71-build
 
 # Repository/Image Maintainer
-MAINTAINER Weslley Camilo
+MAINTAINER Ahgora Sistemas
 
 # Copy Caddyfile and entry script
 COPY Caddyfile /var/www/Caddyfile
@@ -16,10 +13,10 @@ LABEL \
 
 COPY ./s2i/bin/ /usr/libexec/s2i
 
-# Application directory
-#WORKDIR "/var/www/app"
-
+# Change the ownership of the folder.
 RUN chown -R 1000150000:0 /var/www && chmod -R ug+rwx /var/www
+
+# Switch to use XXXX
 USER 1000150000
 
 # Expose webserver port
